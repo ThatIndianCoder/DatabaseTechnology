@@ -11,14 +11,19 @@
 class SimpleEstimator : public Estimator {
 
     std::shared_ptr<SimpleGraph> graph;
+    int* countA;
+    int* countB;
+    int* outvertices_to_remove;
+    int* invertices_to_remove;
+    int* edgeListA;
+    int* edgeListB;
 
 public:
     explicit SimpleEstimator(std::shared_ptr<SimpleGraph> &g);
-    ~SimpleEstimator() = default;
+    ~SimpleEstimator();
 
     void prepare() override ;
     cardStat estimate(RPQTree *q) override ;
-
 };
 
 
